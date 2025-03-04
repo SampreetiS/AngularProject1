@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./login.component.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+ <body>
+     <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+     ></script>
+     <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+     ></script>
+     <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+     ></script>
+
+     <!-- <div class="container1 px-sm-3"> -->
+     <div class="container-fluid d-flex justify-content-center align-items-center p-0   ">
+        <div id="loginbox" class="row border rounder-5 bg-white shadow align-items-center m-lg-3 m-0 gx-sm-5 gy-sm-5">
+          <div id="leftimg" class="col-lg-5 col-11 px-4  mb-lg-0 mb-5 d-flex-column justify-content-center align-content-center">
+            <!-- <img src="assets/imgfolder/loginimg.webp" class="img-fluid" style="height: 500px;" /> -->
+             <h2>DXC Technology</h2><br>
+              <h6>Delivering Excellence for our customers and colleagues</h6><br>
+             <p>Login to access our website</p>
+          </div>
+          <!--  px,py,mx etc have 1-5 range -->
+          <div class=" col-lg-6 col-12 m-sm-2 px-5 ">
+            <!-- <form> -->
+              <img  src="assets/imgfolder/DXC Logo.png" width="70%">
+              <h3 id="text1"><b>Welcome to DXC E-shop</b></h3>
+              <h5 id="text2" class="m-1"><i>Delivering Excellence</i></h5>
+              
+              <br />
+              <div class="form-group mb-2" >
+                
+                <!-- <label for="exampleInputEmail1">Email address</label> -->
+                 <!-- to add add-on icons -->
+                 <div class="input-group mb-3">
+                    <span class="input-group-text " style="border-right:none;" id="basic-addon1">
+                        <img src="/assets/imgfolder/envelope-regular.svg" height="10px" >
+                    
+                    </span>
+                    
+                    <input
+                    id="username"
+                    type="email"
+                    class="form-control"
+                    style="border-left: none"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder= "Username or Email" 
+                    autocomplete="username"
+                    name="username"
+                    (input)="InputUser($event)"
+                    [(ngModel)]="username"
+                  />
+                 <!-- </div> -->
+                <!-- <small id="emailHelp" class="form-text text-muted"
+                  >We'll never share your email with anyone else.</small
+                > -->
+              </div>
+              
+              <div class="form-group">
+                <!-- <label for="exampleInputPassword1">Password</label> -->
+                <div class="input-group mb-3">
+                   <span class="input-group-text" style="border-right: none;" id="basic-addon1">
+                        <img src="/assets/imgfolder/lock-solid.svg" height="10px">
+                     
+                    </span>
+                    <input
+                    type="password"
+                    class="form-control"
+                    style="border-left: none"
+                    id="exampleInputPassword1"
+                    placeholder="Password"
+                    autocomplete="current-password" 
+                    (input)="InputPass($event)"              
+                  />
+                     <!--autocomplete is recomended to be added because:
+                      Improves Autofill Support: Helps browsers recognize the input field for password managers.
+Enhances Security: Encourages password managers to suggest and save passwords correctly.
+Better User Experience: Users won’t have to re-enter their password every time.  -->
+                </div>
+                
+              </div>
+              <div id="checkbox" class="form-check mb-4 g-2 d-flex flex-wrap justify-content-between align-items-center" >
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="flexCheckDefault"
+                />
+                <label class="form-check-label m-0 d-flex justify-content-between" for="flexCheckDefault"
+                  >Remember Me</label
+                >
+                <br>
+                <a  id="forgotpass" href="/src/app/sign-up/sign-up.component.html">Forgot Password?</a>
+              </div>
+              <div class="d-flex align-items-center justify-content-center">              
+                <button type="submit" class="btn button" (click)="loginCheck(RightPass,RightUser)"  routerLink= '/' >
+                  <!-- <a href="/homepage.html" style="color: white; text-decoration: none;" > -->
+                  Sign-In <img src="/assets/imgfolder/arrow-right-to-bracket-solid.svg"  height="12px"> </button>
+              </div>
+            <!-- </form> -->
+          </div>
+        </div>
+     </div>
+     </div>
+         <!-- <script src="main.js"> </script>    -->
+ </body>
+</html>

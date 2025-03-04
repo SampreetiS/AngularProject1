@@ -1,0 +1,146 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container-fluid{
+    /* background-color: #876c9d; */
+    
+    height: 40%;
+    width: 80%; 
+    display: flex;
+    justify-content: center; 
+    /* margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 200px;
+    margin-right: 50px;  */
+    
+
+}
+
+#loginbox{
+    height: 80%;
+    width: 90%;
+    box-shadow: 50px 50px  200px #5f249f  ;
+   /* height: 500px;
+   width: 1000px; */
+   border-radius: 50px ;
+   margin-top: 15vh;    
+}
+#loginbox:hover{
+    box-shadow: 50px 10px  200px #876c9d ;
+    /* flex-direction: row-reverse; */
+
+
+}
+.form-control{
+box-shadow: 10px;
+}
+#text1{
+    font-size: 1.6rem;
+    color: #5f249f;
+    text-align: left;
+    margin-top: 20px;
+}
+#text2{
+    /* font-size: 15px; */
+    color: #5f249f;
+    text-align: left;
+    margin-top: 20px;
+}
+
+#leftimg{
+  width: 100%; 
+  height: 30rem;
+  position: relative;
+  border-top-right-radius: 150px;
+  border-bottom-right-radius: 150px;
+  font-size: 10px;
+  color: white;
+  box-shadow: 10px 10px 40px gray;
+  background-color: #5f249f;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  margin-bottom: 20px;
+}
+/* #leftimg:hover{
+  font-size: larger;
+} */
+/* a{
+   text-decoration: none;
+} */
+.button{
+    width: 6rem;
+    height: 20%;
+    background-color: #5f249f ;   
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    
+
+}
+
+.button a{
+    color: white;
+    text-decoration: none;
+}
+
+.button img{
+    margin: auto;
+}
+#basic-addon1{
+    border-radius: 0%;
+    background-color: white;
+}
+
+a{
+    font-size: 14px;
+}
+#forgotpass{
+    text-decoration: none;
+    color: #5f249f;
+    
+    
+}
+label{
+    font-size: 14px;
+    display: flex;
+    align-items: end;
+    
+}
+@media (max-width:680px){
+.container-fluid{
+   width: 100vw;
+}
+    #leftimg{
+        width: 70%; 
+        height: 30rem;
+        margin: 15px;
+        border-bottom-right-radius: 20%; 
+        border-bottom-left-radius: 20% ;   
+            font-size: larger;
+    }
+    #forgotpass{
+        font-size: smaller;
+    }
+    #loginbox{
+        height: 100%;
+        width: 100%;
+        box-shadow: 50px 50px  200px #5f249f  ;
+       /* height: 500px;
+       width: 1000px; */
+       font-size: smaller;
+       border-radius: 50px ;
+       margin-top: 15vh;    
+    }
+    #text1{
+        font-size: medium;
+    }
+    #text2{
+        font-size: smaller;
+    }
+}
+
+ 

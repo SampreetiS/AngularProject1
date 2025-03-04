@@ -1,0 +1,176 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #A7A7A7;
+    overflow-x: hidden;
+    /* overflow hidden stop horizontal scrolling */
+}
+ .body{
+    
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 60px;
+    background-color: #A7A7A7;
+
+}
+
+.Banner{
+    width: 100%;
+    height: 90vh;
+    z-index: 5;
+    background-image: url("/assets/imgfolder/bruno-kelzer-LvySG1hvuzI-unsplash.jpg");
+    background-size: cover;
+}
+#Hero{
+    width: 8rem;
+    height: 8rem;
+}
+
+#Hero #Shopbtn {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    /* border-top-right-radius:  50%;
+    border-bottom-right-radius: 50%; */
+    background-color: #5f249f;
+    color: white;
+    /* font-weight: 100rem; */
+    box-shadow: 10px 10px 20px #4C4C4C;
+    /* margin-top: 80px; */
+    margin-top: 120px;
+    margin-left: 7rem;
+    /* position: sticky;
+     */
+    border: none;
+}
+
+
+.subcat button{
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;*/
+    /* width: 10rem; */
+    display: none;
+    /* transform: rotate(var(45)) translate(80px) rotate(calc(-1 * var(45))); */
+    /* margin: 100px; */
+    border: none;
+    
+
+}
+
+#Hero:hover {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    margin-top: 10px;
+    color: white;
+    background-color: #5f249f;
+}
+#Hero:hover .subcat button{
+    display: block;
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; */
+    margin: 90px;
+    margin-right: 100px;
+    background-color: #5f249f;
+    color: white;
+}
+.subcat button:hover{
+    
+    box-shadow: 5px 5px 18px white;
+    border: 10px white;
+}
+#Hero:hover #Shopbtn{
+    background-color: #5f249f;
+    box-shadow: none;
+    color: white;
+    display: flex;
+    font-size: larger;
+   display: none;
+}
+#Shopbtn {
+    width: 6rem;
+    height: 3rem;
+    /* border-radius: 20px; */
+    /* border-top-right-radius:  50%; */
+    border-bottom-right-radius: 50%;
+    background-color: #4C4C4C;
+    color: white;
+    /* font-weight: 100rem; */
+    box-shadow: 10px 10px 20px #4C4C4C;
+     
+    border: none;
+}
+#Shopbtn:hover{
+    background-color: #5f249f;
+}
+
+@media(max-width: 680px){
+    body{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+    }
+    
+    .Banner{
+        width: 100vw;
+        height:35vh;
+        margin-bottom: 10px;
+        /* z-index: 5;        */
+        background-image: url("/assets/imgfolder/bruno-kelzer-LvySG1hvuzI-unsplash.jpg");
+        background-size: contain;
+        background-repeat: no-repeat; 
+    }
+    #Hero{
+        width: 8rem;
+        height: 8rem;
+    }
+    #Hero #Shopbtn {
+        width: 4rem;
+        height: 4rem;
+        border-top-right-radius:  50%;
+        border-bottom-right-radius: 50%;
+        background-color: #5f249f;
+        color: white;
+        /* font-weight: 100rem; */
+        box-shadow: 10px 10px 20px #4C4C4C;
+        /* margin-top: 80px; */
+        margin-top: 10px;
+        margin-left: 2rem;
+        font-size: smaller;
+        border: none;
+    }
+    #Hero:hover {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 15rem;
+        height: 15rem;
+        border-radius: 50%;
+        margin-top: 10px;
+        color: white;
+        background-color: #5f249f;
+    }
+    #Hero:hover .subcat button{
+        display: block;
+        text-align: center;
+        margin: 30px;
+        margin-left: 50px;
+        background-color: #5f249f;
+        color: white;
+    }
+    
+}
+
