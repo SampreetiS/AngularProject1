@@ -44,11 +44,9 @@ color: white;
 color: white;
 border: 1px solid white;
 }
-.navbar:hover .SearchBar button{
-    /* color: white; */
-    fill-opacity: white;
-    width: 1.2em;
-    height: 1.2rem;    
+.navbar:hover  button{
+    color: white;
+    
 }
 #Logo{
     width: 10rem;
@@ -87,27 +85,27 @@ border: 1px solid white;
 .SearchBar{
     width: 45%;
     display: flex;
-   /* width: 8em; */
    margin-left: 10px;
 
 }
 .SearchBar button{
-    width: 10rem;
-    height: 1.2rem;
+    /* width: 12rem;
+    height: 1.2rem; */
     /* border-radius:  ; */
     border: none;
+    margin-left: 10px;
     background-color: transparent;
-    background-image: url("/assets/imgfolder/magnifying-glass-solid.svg");
+    /* background-image: url("/assets/imgfolder/magnifying-glass-solid.svg");
     background-size: contain;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     
     /* background-color:gray; */
     /* color:black; */
 }
 .SearchBar button:hover{
-    background-color: transparent;
- 
-    color: #5f249f;
+    /* background-color: transparent; */
+    
+    fill: white;
 }
 .SearchBar input{
     width: 12rem;
@@ -121,8 +119,8 @@ border: 1px solid white;
 }
 .SearchBar input:hover{
     background-color: transparent;
-    width: 12rem;
-    height: 1.2rem;
+    /* width: 12rem;
+    height: 1.2rem; */
     color: #5f249f;
 }
 .SearchBar h6{
@@ -169,6 +167,13 @@ border: 1px solid white;
     background-size: cover;
     
 }
+.icons button{
+border: none;
+margin-left: 30px;
+background-color: transparent;
+
+}
+
 
 @media (max-width:1050px){
     

@@ -109,10 +109,10 @@ Better User Experience: Users won’t have to re-enter their password every time
                   >Remember Me</label
                 >
                 <br>
-                <a  id="forgotpass" href="/src/app/sign-up/sign-up.component.html">Forgot Password?</a>
+                <a routerLink="signup" id="forgotpass" >Forgot Password?</a>
               </div>
               <div class="d-flex align-items-center justify-content-center">              
-                <button type="submit" class="btn button" (click)="loginCheck(RightPass,RightUser)"  routerLink= '/' >
+                <button type="submit" class="btn button" (click)="loginCheck(RightPass,RightUser,username)"  >
                   <!-- <a href="/homepage.html" style="color: white; text-decoration: none;" > -->
                   Sign-In <img src="/assets/imgfolder/arrow-right-to-bracket-solid.svg"  height="12px"> </button>
               </div>

@@ -1,12 +1,14 @@
 import { Component, Input } from '@angular/core';
-import { HomePageComponent } from '../home-page/home-page.component';
-import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { HomePageComponent } from '../home-page/home-page.component';
+import { SignUpComponent } from '../sign-up/sign-up.component';
+
 
 @Component({
   selector: 'app-login',  //this means <app-login> should be used when referring to data written under this component's html file, in app.component.html file. along with this in the parent component's .ts file this selector should be imported.hence if <app-login> needs to be used in app.component.html, first import the class defined here (LoginComponent) in the 'imports' section of app.component.ts file and then add your component content in app.component.html under <app-login></app-login> tag.
   standalone: true,
-  imports: [RouterLink, FormsModule],
+  imports: [FormsModule, RouterLink, RouterOutlet, HomePageComponent, SignUpComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -42,14 +44,13 @@ InputPass(event:Event){
   console.log(this.RightPass)
 }
 }
-
-loginCheck(RightPass:boolean,RightUser:boolean){
+constructor(private router:Router){}
+loginCheck(RightPass:boolean,RightUser:boolean, name:string){
 
 
   // if(this.username !=="" && this.password !== ""){
      if (this.RightUser == true && this.RightPass == true){
-       alert('login successful');
-      
+       this.router.navigate([''],{queryParams:{name}})
      }else{
       alert('not successful');
      }
