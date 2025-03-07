@@ -1,0 +1,16 @@
+$light-mode: (
+  background: #ffffff,
+  text: #000000,
+  primary: #007bff
+);
+$dark-mode: (
+  background: #121212,
+  text: #ffffff,
+  primary: #ff5722
+);
+
+@function themed($key) {
+    @return map-get($theme-map, $key);
+  }
+
+ $theme-map: $light-theme;

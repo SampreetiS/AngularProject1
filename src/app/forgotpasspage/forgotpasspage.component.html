@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./forgotpasspage.component.css" />
+  </head>
+  <body>
+    <!-- <app-navbar></app-navbar> -->
+    <div class="page">
+     <div id="left">
+        <!-- when making a grid, two columns should have same class and style: float:left and width 50% should be applied to make them appear next to each other -->
+        <h1 style="font-size: 45px; font-weight: 520;" class="lefttext">Reset Your DXC Pay Password for Account Access</h1>
+        <small class="lefttext"
+          >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget
+          imperdiet urna, sed semper enim. Praesent hendrerit nisl ex, vel
+          semper lacus luctus et.
+        </small>
+        <div class="image"></div>
+     </div>
+
+     <div  id="right">
+        <div class="logo py-0">
+          <!-- <span class="logo1">
+             <i id=" logotop" class="fa-solid fa-chart-line"></i>
+             <span id="logotop" style="color: #5f249f"><b>Fil</b></span>
+             <span ><b>uick</b></span>
+          </span>
+          <span id="logo2">
+            <pre>__________</pre> -->
+            <!-- <i class="fa-solid fa-minus"></i> -->
+            <!-- <b style="color: #5f249f; font-size: 11px;">Pay</b>
+          </span> -->
+          <img src="assets/imgfolder/DXC Logo.png" width="50%">
+        </div>
+         
+        <div class="container m-3 p-5">
+            <h1 id="righttext">Forgot Password</h1>
+            <small id="righttext" style="color: gray"
+              >No worries, we will send you instructions for reset</small
+            >
+            <br />
+            
+            <label for="name" style="color: gray">First Name</label>
+            <input [(ngModel)]="uname"  class="input" type="name" value="Enter your first name" />
+            <br /> <br> 
+            <label for="email" style="color: gray">Email</label>
+            <br>
+            @for (user of userlist; track user.id){
+               @if(uname==user.firstName){
+            
+            <input class="input" type="email" value="{{user.email}}" />
+            <br /> <br>
+            }}
+            <span class="buttons" >
+            <button style="background-color: #5f249f; color: white; border-color:  white;"  >Reset Password</button>
+              <br />
+            <button routerLink="login" id="back" >Back</button>
+            </span>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

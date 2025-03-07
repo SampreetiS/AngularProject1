@@ -4,61 +4,165 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
     <link rel="stylesheet" href="./sign-up.component.css" />
   </head>
   <body>
-    <div class="page">
-     <div id="left">
-        <!-- when making a grid, two columns should have same class and style: float:left and width 50% should be applied to make them appear next to each other -->
-        <h1 style="font-size: 45px; font-weight: 520;" class="lefttext">Reset Your DXC Pay Password for Account Access</h1>
-        <small class="lefttext"
-          >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget
-          imperdiet urna, sed semper enim. Praesent hendrerit nisl ex, vel
-          semper lacus luctus et.
-        </small>
-        <div class="image"></div>
-     </div>
-
-     <div  id="right">
-        <div class="logo">
-          <!-- <span class="logo1">
-             <i id=" logotop" class="fa-solid fa-chart-line"></i>
-             <span id="logotop" style="color: #5f249f"><b>Fil</b></span>
-             <span ><b>uick</b></span>
-          </span>
-          <span id="logo2">
-            <pre>__________</pre> -->
-            <!-- <i class="fa-solid fa-minus"></i> -->
-            <!-- <b style="color: #5f249f; font-size: 11px;">Pay</b>
-          </span> -->
-          <img src="assets/imgfolder/DXC Logo.png" width="50%">
+    <!-- <div class="container1 px-sm-3"> -->
+    <div
+      class="container-fluid d-flex justify-content-center align-items-center p-0"
+    >
+      <div
+        id="signupbox"
+        class="row border rounder-5 bg-white shadow align-items-center m-lg-3 m-0 gx-sm-5 gy-sm-5"
+      >
+        <div
+          id="leftimg"
+          class="col-md-5 col-11 px-4 mb-lg-0 mb-4 d-flex-column justify-content-center align-content-center"
+        >
+          <!-- <img src="assets/imgfolder/loginimg.webp" class="img-fluid" style="height: 500px;" /> -->
+          <h2>DXC Technology</h2>
+          <br />
+          <h6>Delivering Excellence for our customers and colleagues</h6>
+          <br />
+          <h6>Sign up to be a member</h6>
         </div>
-         
-        <div class="container">
-            <h1 id="righttext">Forgot Password</h1>
-            <small id="righttext" style="color: gray"
-              >No worries, we will send you instructions for reset</small
-            >
-            <br />
-            <label for="email" style="color: gray">Email</label>
-            <br>
-            <input class="input" type="email" value="Enter your Email" />
-            <br /> <br>
+        <div class="col-md-6 col-12 m-sm-2 m-md-5 px-5">
+          <img src="assets/imgfolder/DXC Logo.png" width="70%" />
+          <h3 id="text1"><b>Welcome to DXC E-shop</b></h3>
+          <h5 id="text2" class="m-1"><i>Delivering Excellence</i></h5>
+          <br />
+          <h3 id="text3" class="m-1"><i>Sign Up</i></h3>
+          <h6 id="login">
+            <i>Already have an account?</i><a routerLink="login">Login here</a>
+          </h6>
+          <br />
 
-            <span class="buttons" >
-            <button style="background-color: #5f249f; color: white; border-color:  white;"  >Reset Password</button>
-              <br />
-            <button id="back" href="/src/app/login/login.component.html">Back</button>
-            </span>
-          </div>
+          <br />
+          <form #SignupForm="ngForm" (ngSubmit)="SubmitData(SignupForm.value)">
+            <div class="mb-3">
+              <label for="firstName" class="form-label">First Name</label>
+              <input
+                
+                type="text"
+                name="firstname"
+                ngModel
+                #firstname="ngModel"
+                class="form-control"
+                id="firstName"
+                aria-describedby="texthelp"
+                 required 
+                
+
+              />
+              <span class="error" *ngIf="firstname?.invalid && firstname?.touched">
+               First name is required
+              </span>
+              
+            </div>
+           
+
+            <div class="mb-3">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input
+                
+                type="text"
+                class="form-control"
+                id="lastName"
+                aria-describedby="texthelp"
+                name="lastname"
+                ngModel
+
+              />
+            </div>
+            <!-- <span
+                    *ngIf = "lastname?.hasError('required')">
+                    *This field is mandatory
+                  </span> -->
+            <div class="mb-3">
+              <label for="Number" class="form-label">Phone Number</label>
+              <input
+                
+                type="text"
+                name="num"
+                ngModel
+
+                placeholder="+91"
+                class="form-control"
+                id="Number"
+                aria-describedby="texthelp"
+                
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Email address</label
+              >
+              <input
+                
+                
+                type="email"
+                ngModel
+                name="email"
+                #email="ngModel"
+                class="form-control"
+                id="exampleInputEmail1"
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                aria-describedby="emailHelp"
+                required                
+              />
+            
+            <span class="error"  *ngIf="email?.invalid && email?.touched"> *Please enter valid email </span>
+
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Password</label
+              >
+              <input
+                
+                type="password"
+                ngModel
+                name="pass"
+                class="form-control"
+                id="exampleInputPassword1"
+                #pass="ngModel"
+               required 
+              />
+            </div>
+            <span class="error"  *ngIf="pass?.invalid && pass?.touched">
+              Please enter Password
+             </span>
+
+            <div class="mb-3 form-check">
+              <input
+                type="checkbox"
+                name="cb"
+                ngModel
+                #cb="ngModel"
+                class="form-check-input"
+                id="exampleCheck1"
+                required
+              />
+              <label class="form-check-label" for="exampleCheck1"
+                >Accept our terms and conditions</label
+              >
+            </div>
+            <span class="error" 
+                    *ngIf = "cb?.invalid && cb?.touched">
+                    *Please accept terms and conditions
+                  </span>
+            <div
+              class="button d-flex justify-content-center align-content-center"
+            >
+              <button  type="submit" [disabled]="SignupForm.invalid" class="btn">
+                Submit
+              </button>
+            </div>
+            <p *ngIf="submitted">Form Submitted Successfully! 🎉</p>
+
+          </form>
+        </div>
       </div>
     </div>
   </body>

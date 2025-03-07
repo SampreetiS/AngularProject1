@@ -3,12 +3,13 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { HomePageComponent } from '../home-page/home-page.component';
 import { SignUpComponent } from '../sign-up/sign-up.component';
+import { ForgotpasspageComponent } from '../forgotpasspage/forgotpasspage.component';
 
 
 @Component({
   selector: 'app-login',  //this means <app-login> should be used when referring to data written under this component's html file, in app.component.html file. along with this in the parent component's .ts file this selector should be imported.hence if <app-login> needs to be used in app.component.html, first import the class defined here (LoginComponent) in the 'imports' section of app.component.ts file and then add your component content in app.component.html under <app-login></app-login> tag.
   standalone: true,
-  imports: [FormsModule, RouterLink, RouterOutlet, HomePageComponent, SignUpComponent],
+  imports: [FormsModule, RouterLink, RouterOutlet, HomePageComponent, SignUpComponent, ForgotpasspageComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })

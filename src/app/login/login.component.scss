@@ -1,3 +1,5 @@
+@import "/src/styles.scss";
+@import "/src/themes.scss";
 
 
 *{
@@ -40,7 +42,7 @@ box-shadow: 10px;
 }
 #text1{
     font-size: 1.6rem;
-    color: #5f249f;
+    color: themed(#5f249f);
     text-align: left;
     margin-top: 20px;
 }

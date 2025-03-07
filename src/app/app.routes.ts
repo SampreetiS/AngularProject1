@@ -5,6 +5,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { PlpComponent } from './plp/plp.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ForgotpasspageComponent } from './forgotpasspage/forgotpasspage.component';
+import { CardComponent } from './reusable-components/card/card.component';
 
 export const routes: Routes = [
     {path:'login', component:LoginComponent},
@@ -13,6 +15,10 @@ export const routes: Routes = [
     {path:'plp', component:PlpComponent},
     {path:'cart', component:CartPageComponent},
     {path:'navbar', component:NavbarComponent},
+    {path:'forgotpass', loadComponent:()=> import('./forgotpasspage/forgotpasspage.component').then((c)=>c.ForgotpasspageComponent) },
+    {path:'card', component:CardComponent},
+
+
 
 
 

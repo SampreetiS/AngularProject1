@@ -1,3 +1,6 @@
+@import "/src/styles.scss";
+@import "/src/themes.scss";
+
 *{
     margin: 0;
     padding: 0;
@@ -7,7 +10,7 @@
 
 body{
     width: auto;
-    background-color: #D0D0D0;
+    background-color: themed(#D0D0D0) ;
     /* background-image: url("/assets/imgfolder/bruno-kelzer-LvySG1hvuzI-unsplash.jpg");
     background-size: cover; */
     /* background-repeat: no-repeat; */
@@ -18,34 +21,32 @@ body{
     width: 94%;
     height: 7rem;
     background-color: transparent;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-center(row);
     padding-left: 1rem;
     margin-left: 20px;
     border-bottom-right-radius: 50px;
     position: sticky;
     top: 0px;
-    color: black;
+    color: themed(#000000) ;
     /* box-shadow: 1px 2px 15px gray; */
 
 }
 .navbar:hover{
-    background-color: #5f249f;
-    color: white;
+    background-color: themed(#5f249f);
+    color: themed(#FFFFFF) ;
     position: sticky;
     top: 0px;
 }
 .navbar:hover #NavSection li{
-color: white;
+    color: themed(#FFFFFF) ;
 
 }
 .navbar:hover .SearchBar input{
-color: white;
+color: themed(#FFFFFF) ;
 border: 1px solid white;
 }
 .navbar:hover  button{
-    color: white;
+    color: themed(#FFFFFF) ;
     
 }
 #Logo{
@@ -113,7 +114,7 @@ border: 1px solid white;
     background-color: transparent;
     border: 1.7px solid black;
     border-radius: 30px;
-    color: white;
+    color: themed(#FFFFFF) ;
     text-align: center;
     /* box-shadow: 1px 1px 9px white inset; */
 }
@@ -121,7 +122,7 @@ border: 1px solid white;
     background-color: transparent;
     /* width: 12rem;
     height: 1.2rem; */
-    color: #5f249f;
+    color: themed(#5f249f) ;
 }
 .SearchBar h6{
     display: none;
@@ -130,7 +131,7 @@ border: 1px solid white;
 .SearchBar:focus-within h6{
     display: block;
     font-size: x-small;
-    color: white;
+    color: themed(#FFFFFF) ;
 }
 
 .Login{
@@ -146,7 +147,7 @@ border: 1px solid white;
     border-color: white;
     border: none;
     border-radius: 30px;
-    color:white;
+    color: themed(#FFFFFF) ;
     margin: 10px;
     
 }
@@ -160,7 +161,7 @@ border: 1px solid white;
 }
 #menuicon{
     display: none;
-    color: white;
+    color: themed(#FFFFFF) ;
     width: 30px;
     height: 30px;
     background-image: url("/assets/imgfolder/menu-icon.svg");
@@ -174,115 +175,118 @@ background-color: transparent;
 
 }
 
-
-
-@media (max-width:1050px){
-    
-    #NavSection{
-        width: fit-content;
-    }
-    
-
-    
+@include responsive(mobile){
+    flex-direction: column;
 }
-@media (max-width:768px){
-    #logo img{
-        width: 10rem;
-    }
 
-    .navbar{
-        width: 6%;
-        height: 20%;
-        /* background-color: transparent; */
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        /* padding: 1.4rem;
-        margin-left: 1%; */
-        border-bottom-right-radius: 50px;
-        position: sticky;
-        top: 0px;
-    }
-    .navbar:hover{
-        background-color: #5f249f;
-    }
-    #NavSection{
+
+// @media (max-width:1050px){
+    
+//     #NavSection{
+//         width: fit-content;
+//     }
+    
+
+    
+// }
+// @media (max-width:768px){
+//     #logo img{
+//         width: 10rem;
+//     }
+
+//     .navbar{
+//         width: 6%;
+//         height: 20%;
+//         /* background-color: transparent; */
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+//         /* padding: 1.4rem;
+//         margin-left: 1%; */
+//         border-bottom-right-radius: 50px;
+//         position: sticky;
+//         top: 0px;
+//     }
+//     .navbar:hover{
+//         background-color: #5f249f;
+//     }
+//     #NavSection{
         
-        display: none;
+//         display: none;
        
-    }
+//     }
     
-    #NavSection li{
-        list-style: none;
-        display: inline;
-        margin-left: 20px;
-        color: black;
+//     #NavSection li{
+//         list-style: none;
+//         display: inline;
+//         margin-left: 20px;
+//         color: black;
     
-    }
-    .SearchBar{
-        display: inline;
-       /* width: 8em; */
-       margin-left: 10px;
+//     }
+//     .SearchBar{
+//         display: inline;
+//        /* width: 8em; */
+//        margin-left: 10px;
     
-    }
-    .SearchBar button{
-        width: 5rem;
-        height: 1.6rem;
-        border-radius: 10px ;
-        border: none;
-        background-color:#5f249f;
-        color:white;
-    }
-    .SearchBar button:hover{
-        background-color: white;
-        color: #5f249f;
-    }
-    .SearchBar input{
-        width: 12rem;
-        height: 1.4rem;
-        background-color: #5f249f;
-        border: 1.7px solid white;
-        border-radius: 30px;
-        color: white;
-        text-align: center;
-        /* box-shadow: 1px 1px 9px white inset; */
-    }
-    .SearchBar input:hover{
-        background-color: white;
-        color: #5f249f;
-    }
-    .Login{
-        width: 20%;
-        display: flex;
-        /* justify-content:; */
-        margin-left: 8rem;
-    }
-    .Login button{
-        width: 80px;
-        height: 50px;
-        /* margin: 10px; */
-        background-color:#5f249f;
-        border-color: white;
-        border: none;
-        border-radius: 30px;
-        color:white;
+//     }
+//     .SearchBar button{
+//         width: 5rem;
+//         height: 1.6rem;
+//         border-radius: 10px ;
+//         border: none;
+//         background-color:#5f249f;
+//         color:white;
+//     }
+//     .SearchBar button:hover{
+//         background-color: white;
+//         color: #5f249f;
+//     }
+//     .SearchBar input{
+//         width: 12rem;
+//         height: 1.4rem;
+//         background-color: #5f249f;
+//         border: 1.7px solid white;
+//         border-radius: 30px;
+//         color: white;
+//         text-align: center;
+//         /* box-shadow: 1px 1px 9px white inset; */
+//     }
+//     .SearchBar input:hover{
+//         background-color: white;
+//         color: #5f249f;
+//     }
+//     .Login{
+//         width: 20%;
+//         display: flex;
+//         /* justify-content:; */
+//         margin-left: 8rem;
+//     }
+//     .Login button{
+//         width: 80px;
+//         height: 50px;
+//         /* margin: 10px; */
+//         background-color:#5f249f;
+//         border-color: white;
+//         border: none;
+//         border-radius: 30px;
+//         color:white;
         
-    }
-    .Login button:hover{
-     background-color: white;
-     color: #5f249f;
-     box-shadow: 1px 5px 80px rgb(222, 212, 212);
-    }
-    #menucheckbox{
-        display: none;
-    }
-    #menuicon{
-        display: none;
-        color: white;
-        width: 30px;
-        height: 30px;
-        background-image: url("/assets/imgfolder/menu-icon.svg");
-        background-size: cover;
+//     }
+//     .Login button:hover{
+//      background-color: white;
+//      color: #5f249f;
+//      box-shadow: 1px 5px 80px rgb(222, 212, 212);
+//     }
+//     #menucheckbox{
+//         display: none;
+//     }
+//     #menuicon{
+//         display: none;
+//         color: white;
+//         width: 30px;
+//         height: 30px;
+//         background-image: url("/assets/imgfolder/menu-icon.svg");
+//         background-size: cover;
         
-    }
-}
+//     }
+// }

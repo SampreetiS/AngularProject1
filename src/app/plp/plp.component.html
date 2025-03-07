@@ -23,7 +23,9 @@
       crossorigin="anonymous"
     ></script> -->
 
-  
+    <app-navbar [cartcount]="prodcount" ></app-navbar>
+    
+    
     <div id="sortBy" class="container-fluid px-5 d-flex justify-content-end" >
         <div class="dropdown ">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -89,54 +91,64 @@
     </div>
    
       
-    <div class="col-7 d-flex flex-wrap justify-content-center border shadow m-3 ">
-        
-        <div *ngIf="PhoneisChecked" class="card m-3" style="width: 18rem; height: 25rem;">
-            <img src="/assets/imgfolder/smartphone.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Smartphone</h5>
-              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-              <a (click)="AddToCartFunc(prodcount)" class="btn m-3"> + {{prodcount}}</a>
-            </div>
-          </div>
-          
-          <div *ngIf="LaptopisChecked" class="card m-3" style="width: 18rem;height: 25rem;">
-            <img src="/assets/imgfolder/laptop.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Laptop</h5>
-              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-              <a  class="btn m-3">Add to cart</a>
-            </div>
-          </div>
-         
-          <div *ngIf="GamingisChecked" class="card m-3" style="width: 18rem; height: 25rem;">
-            <img src="/assets/imgfolder/gaming.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Gaming</h5>
-              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-              <a href="#" class="btn m-3">Add to cart</a>
-            </div>
-          </div> 
-
-
-          <div *ngIf="CameraisChecked" class="card m-3 " style="width: 18rem; height: 25rem;">
-            <img src="/assets/imgfolder/camera.webp" class="card-img-top" alt="...">
-            <div class="card-body ">
-              <h5 class="card-title">Camera</h5>
-              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-              <a href="#" class="btn m-3">Add to cart</a>
-            </div>
-          </div>  
-
-          <div *ngIf="WatchisChecked" class="card m-3" style="width: 18rem; height: 25rem;">
-            <img src="/assets/imgfolder/smartwatch.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">SmartWatches</h5>
-              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-              <a href="#" class="btn m-3">Add to cart</a>
-            </div>
-          </div> 
-    </div>
+    <div class="cardcomponent col-7  ">
+      <div *ngFor="let product of products">
+         <app-card  [products]="products" (addToCart)="plpfunc($event)" ></app-card>
+        </div>
+      </div> 
     </div>
   </body>
 </html>
+
+
+
+
+
+
+
+
+<!-- <div *ngIf="PhoneisChecked" class="card m-3" style="width: 18rem; height: 25rem;">
+  <img src="/assets/imgfolder/smartphone.webp" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Smartphone</h5>
+     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+    <a (click)="AddToCartFunc(prodcount)"  class="btn m-3"> Add to cart +{{prodcount}}</a>
+  </div>
+</div>
+
+<div *ngIf="LaptopisChecked" class="card m-3" style="width: 18rem;height: 25rem;">
+  <img src="/assets/imgfolder/laptop.webp" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Laptop</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a (click)="AddToCartFunc(prodcount)" class="btn m-3">Add to cart  +{{prodcount}}</a>
+  </div>
+</div>
+
+<div *ngIf="GamingisChecked" class="card m-3" style="width: 18rem; height: 25rem;">
+  <img src="/assets/imgfolder/gaming.webp" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Gaming</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a (click)="AddToCartFunc(prodcount)" class="btn m-3">Add to cart  +{{prodcount}}</a>
+  </div>
+</div> 
+
+
+<div *ngIf="CameraisChecked" class="card m-3 " style="width: 18rem; height: 25rem;">
+  <img src="/assets/imgfolder/camera.webp" class="card-img-top" alt="...">
+  <div class="card-body ">
+    <h5 class="card-title">Camera</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a (click)="AddToCartFunc(prodcount)" class="btn m-3">Add to cart  +{{prodcount}}</a>
+  </div>
+</div>  
+
+<div *ngIf="WatchisChecked" class="card m-3" style="width: 18rem; height: 25rem;">
+  <img src="/assets/imgfolder/smartwatch.webp" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">SmartWatches</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a (click)="AddToCartFunc(prodcount)" class="btn m-3">Add to cart  +{{prodcount}}</a>
+  </div>
+</div>  -->

@@ -12,13 +12,9 @@ body{
 #sidebar{
     background-color: #D0D0D0;
 }
-.card .btn{
-width: 8rem;   
-background-color: #5f249f;
-color: white;
-border-radius: 10px;
-display: flex;
-justify-content: center;
-align-items: center;
-/* margin-left: 60px; */
+.cardcomponent{
+    display: flex;
+    flex-direction: column;
+    background-color: #D0D0D0;
+    flex-wrap: wrap;
 }

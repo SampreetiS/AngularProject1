@@ -1,2 +1,11 @@
-<h1>Shopping cart-page </h1>
+<h1>Shopping cart-page parent </h1>
+<!-- <app-card (addToCart)="cartfunc($event)" ></app-card> -->
 
+<!-- <div *ngIf="choseprod.length > 0; else emptycart" > -->
+  <div *ngFor="let prod of chosenprod">
+    <h1>{{prod.Pname}}</h1> 
+  </div>
+<!-- </div>
+<ng-template #emptycart>
+ <p>Your cart is empty</p>
+</ng-template> -->
