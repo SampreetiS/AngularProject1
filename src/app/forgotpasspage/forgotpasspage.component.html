@@ -16,19 +16,21 @@
   </head>
   <body>
     <!-- <app-navbar></app-navbar> -->
-    <div class="page">
-     <div id="left">
+    <div class="page container-fluid d-flex justify-content-center align-items-center">
+      <div id="left" class="mb-0">
         <!-- when making a grid, two columns should have same class and style: float:left and width 50% should be applied to make them appear next to each other -->
-        <h1 style="font-size: 45px; font-weight: 520;" class="lefttext">Reset Your DXC Pay Password for Account Access</h1>
+        <h2 style=" font-weight: 520" class="lefttext">
+          Reset Your DXC Pay Password for Account Access
+        </h2>
         <small class="lefttext"
           >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget
           imperdiet urna, sed semper enim. Praesent hendrerit nisl ex, vel
           semper lacus luctus et.
         </small>
-        <div class="image"></div>
-     </div>
+        <div class="image d-flex"></div>
+      </div>
 
-     <div  id="right">
+      <div id="right" class="mb-2">
         <div class="logo py-0">
           <!-- <span class="logo1">
              <i id=" logotop" class="fa-solid fa-chart-line"></i>
@@ -37,36 +39,55 @@
           </span>
           <span id="logo2">
             <pre>__________</pre> -->
-            <!-- <i class="fa-solid fa-minus"></i> -->
-            <!-- <b style="color: #5f249f; font-size: 11px;">Pay</b>
+          <!-- <i class="fa-solid fa-minus"></i> -->
+          <!-- <b style="color: #5f249f; font-size: 11px;">Pay</b>
           </span> -->
-          <img src="assets/imgfolder/DXC Logo.png" width="50%">
+          <img src="assets/imgfolder/DXC Logo.png" width="35%" />
         </div>
-         
-        <div class="container m-3 p-5">
-            <h1 id="righttext">Forgot Password</h1>
-            <small id="righttext" style="color: gray"
-              >No worries, we will send you instructions for reset</small
+
+        <div class="container  rounded-3 px-3">
+          <h3 id="righttext">Forgot Password?</h3>
+          <small id="righttext" style="color: gray"
+            >No worries, we will send you instructions for reset</small
+          >
+        
+          <small *ngIf="submitted" class="m-3 text-center" >Email Sent!Please check your inbox</small>
+
+          <div class="inputbox d-flex-column justify-content-start align-items-center">
+            <label for="name" style="color: gray"
+              >First Name: <input
+                [(ngModel)]="uname"
+                class="input mb-3"
+                type="name"
+                value="Enter your first name"
+              /></label
             >
+          
+            <label for="email" style="color: gray">Email:</label>
+            
+            @for (user of userlist; track user.id){ @if(uname==user.firstName){
+
+            <input  class="input" type="email" value="{{ user.email }}" />
             <br />
-            
-            <label for="name" style="color: gray">First Name</label>
-            <input [(ngModel)]="uname"  class="input" type="name" value="Enter your first name" />
-            <br /> <br> 
-            <label for="email" style="color: gray">Email</label>
-            <br>
-            @for (user of userlist; track user.id){
-               @if(uname==user.firstName){
-            
-            <input class="input" type="email" value="{{user.email}}" />
-            <br /> <br>
+            <br />
             }}
-            <span class="buttons" >
-            <button style="background-color: #5f249f; color: white; border-color:  white;"  >Reset Password</button>
-              <br />
-            <button routerLink="login" id="back" >Back</button>
-            </span>
           </div>
+
+          <span class="buttons">
+            <button (click)="submit()"
+              style="
+                background-color: #5f249f;
+                color: white;
+                border-color: white;
+              "
+            >
+              Reset Password
+            </button>
+            <br />
+            <button routerLink="" id="back">Back</button>
+
+          </span>
+        </div>
       </div>
     </div>
   </body>

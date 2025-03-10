@@ -4,12 +4,12 @@
     padding: 0;
     margin: 0;
 }
-.container-fluid{
+.cont{
     /* background-color: #876c9d; */
     
     height: 40%;
     width: 80%; 
-    @include flex-center(row);
+    /* @include flex-center(row); */
     /* display: flex;
     justify-content: center;  */
     /* margin-top: 100px;
@@ -23,14 +23,15 @@
 #loginbox{
     height: 80%;
     width: 90%;
-    box-shadow: 50px 50px  200px #5f249f  ;
+    box-shadow: 10px 10px  200px #876c9d   ;
    /* height: 500px;
    width: 1000px; */
    border-radius: 50px ;
    margin-top: 15vh;    
 }
 #loginbox:hover{
-    box-shadow: 50px 10px  200px #876c9d ;
+    box-shadow: 5px 5px  200px #5f249f ;
+
     /* flex-direction: row-reverse; */
 
 
@@ -115,14 +116,15 @@ label{
 }
 @media (max-width:680px){
 .container-fluid{
-   width: 100vw;
+   width: 100%;
 }
     #leftimg{
-        width: 70%; 
+        width: 90%; 
         height: 30rem;
         margin: 15px;
         border-bottom-right-radius: 20%; 
-        border-bottom-left-radius: 20% ;   
+        border-bottom-left-radius: 20% ;
+        border-top-right-radius: 0px;   
             font-size: larger;
     }
     #forgotpass{

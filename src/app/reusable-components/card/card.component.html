@@ -7,19 +7,19 @@
     <link rel="stylesheet" href="./card.component.css">
 </head>
 <body>
-    <!-- <h1>Card Component</h1> -->
+    <!-- <h1>Card Component</h1> --> 
     <div  class="container d-flex flex-wrap justify-content-center align-items-center ">
         @for(product of products;track product.Pid){
-        <div class="card m-3" style="width: 18rem; height: 30rem;">
+        <div  class="card m-3" style="width: 18rem; height: 30rem;">
             <img src="{{product.Pimage}}">
                 <div class="card-body">
               <h5 class="card-title">{{product.Pname}}</h5>
               <p class="card-text">{{product.Pdesc}}</p>
               <h5>${{product.Pprice}}</h5>
-              <a (click)="AddToCartFunc()" class="btn m-3" [ngClass]="cardclass"  > {{buttonname}} </a>
+              <a (click)="AddToCartFunc()" (click)="addedtocart()" class="btn m-3" [ngClass]="class"> {{buttonname}} </a>
             </div>
           </div>
-        }
+        } 
         </div>
 </body>
 </html>

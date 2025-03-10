@@ -5,19 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./sign-up.component.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <!-- <div class="container1 px-sm-3"> -->
     <div
-      class="container-fluid d-flex justify-content-center align-items-center p-0"
+      class="container-fluid cont d-flex justify-content-center align-items-center p-0"
     >
       <div
         id="signupbox"
-        class="row border rounder-5 bg-white shadow align-items-center m-lg-3 m-0 gx-sm-5 gy-sm-5"
+        class="row border rounder-5 bg-white  align-items-center  m-lg-3 m-0 gx-sm-5 gy-sm-5"
       >
         <div
           id="leftimg"
-          class="col-md-5 col-11 px-4 mb-lg-0 mb-4 d-flex-column justify-content-center align-content-center"
+          class="col-lg-5 col-11 px-4 mb-lg-0 mb-5 d-flex-column justify-content-center align-content-center"
         >
           <!-- <img src="assets/imgfolder/loginimg.webp" class="img-fluid" style="height: 500px;" /> -->
           <h2>DXC Technology</h2>
@@ -26,21 +32,23 @@
           <br />
           <h6>Sign up to be a member</h6>
         </div>
-        <div class="col-md-6 col-12 m-sm-2 m-md-5 px-5">
+        <div class="col-lg-6 col-12 m-sm-2  px-5">
           <img src="assets/imgfolder/DXC Logo.png" width="70%" />
-          <h3 id="text1"><b>Welcome to DXC E-shop</b></h3>
+          <!-- <h3 id="text1"><b>Welcome to DXC E-shop</b></h3>
           <h5 id="text2" class="m-1"><i>Delivering Excellence</i></h5>
-          <br />
-          <h3 id="text3" class="m-1"><i>Sign Up</i></h3>
-          <h6 id="login">
-            <i>Already have an account?</i><a routerLink="login">Login here</a>
-          </h6>
-          <br />
+          <br /> -->
+          <h3 id="text3" class="m-1">Sign Up</h3>
+          <small id="login">
+            <i>Already have an account?</i><a routerLink="">Login here</a>
+          </small>
 
-          <br />
+          <br /><br>
+          <p id="login" *ngIf="submitted">Submitted Successfully!🎉<a routerLink ="">Please login here</a> </p>
+
           <form #SignupForm="ngForm" (ngSubmit)="SubmitData(SignupForm.value)">
-            <div class="mb-3">
-              <label for="firstName" class="form-label">First Name</label>
+            <div  id="Name" class="d-flex">
+            <div class="d-flex-column flex mb-2">
+              <label  for="firstName" class="form-label">First Name</label>
               <input
                 
                 type="text"
@@ -61,8 +69,8 @@
             </div>
            
 
-            <div class="mb-3">
-              <label for="lastName" class="form-label">Last Name</label>
+            <div  class=" d-flex-column">
+              <label  for="lastName" class="form-label">Last Name</label>
               <input
                 
                 type="text"
@@ -74,11 +82,12 @@
 
               />
             </div>
+          </div>
             <!-- <span
                     *ngIf = "lastname?.hasError('required')">
                     *This field is mandatory
                   </span> -->
-            <div class="mb-3">
+            <div class="mb-2">
               <label for="Number" class="form-label">Phone Number</label>
               <input
                 
@@ -94,7 +103,7 @@
               />
             </div>
 
-            <div class="mb-3">
+            <div class="mb-2">
               <label for="exampleInputEmail1" class="form-label"
                 >Email address</label
               >
@@ -115,7 +124,7 @@
             <span class="error"  *ngIf="email?.invalid && email?.touched"> *Please enter valid email </span>
 
             </div>
-            <div class="mb-3">
+            <div class="mb-2">
               <label for="exampleInputPassword1" class="form-label"
                 >Password</label
               >
@@ -134,7 +143,7 @@
               Please enter Password
              </span>
 
-            <div class="mb-3 form-check">
+            <div class="mb-2 form-check">
               <input
                 type="checkbox"
                 name="cb"
@@ -159,7 +168,6 @@
                 Submit
               </button>
             </div>
-            <p *ngIf="submitted">Form Submitted Successfully! 🎉</p>
 
           </form>
         </div>

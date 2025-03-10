@@ -23,89 +23,166 @@
       crossorigin="anonymous"
     ></script> -->
 
-    <app-navbar [cartcount]="prodcount" ></app-navbar>
-    
-    
-    <div id="sortBy" class="container-fluid px-5 d-flex justify-content-end" >
-        <div class="dropdown ">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Sort By
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Price</a></li>
-              <li><a class="dropdown-item" href="#">New Arrival</a></li>
-              <li><a class="dropdown-item" href="#">Delivery time</a></li>
-            </ul>
-          </div>
-    </div> 
-    <div class="container-fluid d-flex" id="sidebar">
-    <div  class="col-3 d-flex-column m-3">
-        <div  class="accordion " id="accordionExample">
-            <div  class="accordion-item ">
-              <h2 style="background-color: #A7A7A7;" class="accordion-header">
-                <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Categories
-                </button>
-              </h2>
-              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                <div class="accordion-body  px-5 d-flex-column ">
-                    <input type="checkbox" [(ngModel)]="PhoneisChecked" id="cb1" class="mx-2">
-                    <label for="cb1"  ><small>Smartphone and Accessories</small></label><br><br>
-                    <input type="checkbox" [(ngModel)]="LaptopisChecked"  id="cb2" class="mx-2">
-                    <label for="cb2"><small>Laptops and Computers</small> </label><br><br>
-                    <input type="checkbox" [(ngModel)]="GamingisChecked"  id="cb3" class="mx-2">
-                    <label for="cb3"><small>Gaming Consoles & Accessories</small> </label><br><br>
-                    <input type="checkbox" [(ngModel)]="CameraisChecked"  id="cb4" class="mx-2">
-                    <label for="cb4"><small>Cameras & Photography</small> </label><br><br>
-                    <input type="checkbox" [(ngModel)]="WatchisChecked"  id="cb4" class="mx-2">
-                    <label for="cb4"><small>Smartwatches</small> </label>
-                </div>
-              </div>
-            </div>
-            <div style="background-color: #D0D0D0;" class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Price
-                </button>
-              </h2>
-              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                </div>
-              </div>
-            </div>
-            <div style="background-color: #D0D0D0;" class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Delivery Time
-                </button>
-              </h2>
-              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                </div>
-              </div>
-            </div>
-          </div> 
-             
+    <app-navbar [cartcount]="prodcount"></app-navbar>
+
+    <div id="sortBy" class="container my-1 px-3 d-flex justify-content-end">
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Sort By
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Price</a></li>
+          <li><a class="dropdown-item" href="#">New Arrival</a></li>
+          <li><a class="dropdown-item" href="#">Delivery time</a></li>
+        </ul>
+      </div>
     </div>
-   
-      
-    <div class="cardcomponent col-7  ">
-      <div *ngFor="let product of products">
-         <app-card  [products]="products" (addToCart)="plpfunc($event)" ></app-card>
+    <div class="container-fluid d-flex " id="sidebar">
+      <div class="col-3 d-flex-column m-3">
+        <!-- to make accordion background transparent change the class name to accordiony -->
+        <div class="accordion " id="accordionExample">
+          <div style="background-color: #d0d0d0" class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="false"
+                aria-controls="collapseOne"
+              >
+                Categories
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body mx-5 px-5 d-flex-column">
+                <label for="cb1">
+                  <input
+                    type="checkbox"
+                    [(ngModel)]="PhoneisChecked"
+                    id="cb1"
+                    class="mx-2"
+                    (change)="filterf()"
+                  />
+                  <small>Smartphone and Accessories</small></label
+                ><br /><br />
+
+                <label for="cb2">
+                  <input
+                    type="checkbox"
+                    [(ngModel)]="LaptopisChecked"
+                    id="cb2"
+                    class="mx-2"
+                    (change)="filterf()"
+                  />
+                  <small>Laptops and Computers</small> </label
+                ><br /><br />
+                <input
+                  type="checkbox"
+                  [(ngModel)]="GamingisChecked"
+                  id="cb3"
+                  class="mx-2"
+                  (change)="filterf()"
+                />
+                <label for="cb3"
+                  ><small>Gaming Consoles</small> </label
+                ><br /><br />
+                <input
+                  type="checkbox"
+                  [(ngModel)]="CameraisChecked"
+                  id="cb4"
+                  class="mx-2"
+                  (change)="filterf()"
+                />
+                <label for="cb4"><small>Cameras & Photography</small> </label
+                ><br /><br />
+                <input
+                  type="checkbox"
+                  [(ngModel)]="WatchisChecked"
+                  id="cb4"
+                  class="mx-2"
+                  (change)="filterf()"
+                />
+                <label for="cb4"><small>Smartwatches</small> </label>
+              </div>
+            </div>
+          </div>
+          <div style="background-color: #d0d0d0" class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Price
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="price accordion-body d-flex justify-content-start">
+                <input type="number" name="minprice" placeholder="min" />
+                <input type="number" name="maxprice" placeholder="max" />
+              </div>
+            </div>
+          </div>
+          <div style="background-color: #d0d0d0" class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                Delivery Time
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <label><input type="checkbox" />One day delivery</label>
+                <label><input type="checkbox" />Deliver in 2 days</label>
+                <label><input type="checkbox" />Standard Delivery</label>
+              </div>
+            </div>
+          </div>
         </div>
-      </div> 
+      </div>
+
+      <div class="cardcomponent col-7">
+        <div>
+          <!-- @for(product of chosenprod; track product.Pname){ -->
+
+          <app-card
+            [chosencat]="chosencat"
+            [products]="chosenprod"
+            (addToCart)="plpfunc($event)"
+          ></app-card>
+          <!-- } -->
+        </div>
+      </div>
     </div>
   </body>
 </html>
-
-
-
-
-
-
-
 
 <!-- <div *ngIf="PhoneisChecked" class="card m-3" style="width: 18rem; height: 25rem;">
   <img src="/assets/imgfolder/smartphone.webp" class="card-img-top" alt="...">

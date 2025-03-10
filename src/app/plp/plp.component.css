@@ -9,6 +9,9 @@ body{
     background-color: #D0D0D0;
     /* overflow: hidden; */
 }
+#sortBy{
+    margin-right: 20px;
+}
 #sidebar{
     background-color: #D0D0D0;
 }
@@ -17,4 +20,12 @@ body{
     flex-direction: column;
     background-color: #D0D0D0;
     flex-wrap: wrap;
+}
+.price input{
+    width: 8rem;
+    margin-left: 5px;
+}
+#sortBy{
+    background-color: #D0D0D0;
+
 }

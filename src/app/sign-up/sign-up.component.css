@@ -2,20 +2,14 @@
     padding: 0;
     margin: 0;
 }
-.container-fluid{
+.cont{
     /* background-color: #876c9d; */
     
     height: 40%;
     width: 80%; 
-    display: flex;
-    justify-content: center; 
-    /* margin-top: 100px;
-    margin-bottom: 100px;
-    margin-left: 200px;
-    margin-right: 50px;  */
-    
-
 }
+
+
 #login a{
     color: #5f249f;
     margin-left: 6px;
@@ -25,22 +19,27 @@
 }
 
 #signupbox{
-    height: 80%;
+    height: 100%;
     width: 90%;
-    box-shadow: 50px 50px  200px #5f249f  ;
+    box-shadow: 10px 10px  200px #876c9d  ;
    /* height: 500px;
    width: 1000px; */
    border-radius: 50px ;
-   margin-top: 15vh;    
+   margin-top: 15vh; 
+   
 }
 #signupbox:hover{
- box-shadow: 50px 10px  200px #876c9d ;
+ box-shadow: 10px 10px  200px #5f249f  ;
     /* flex-direction: row-reverse; */
 
 
 }
 .form-control{
 box-shadow: 10px;
+}
+#Name input{
+width: 10.8rem;
+margin-right: 10px;
 }
 #text1{
     font-size: 1.6rem;
@@ -54,10 +53,16 @@ box-shadow: 10px;
     text-align: left;
     margin-top: 20px;
 }
+#text3{
+    /* font-size: 15px; */
+    color: #5f249f;
+    text-align: left;
+    margin-top: 20px;
+}
 
 #leftimg{
-  width: 90%; 
-  height: 60rem;
+  width: 100%; 
+  height: 36rem;
   position: relative;
   border-top-right-radius: 150px;
   border-bottom-right-radius: 150px;
@@ -102,6 +107,8 @@ box-shadow: 10px;
 @media (max-width:680px){
 .container-fluid{
    width: 100vw;
+   overflow: hidden;
+   flex-wrap: wrap;
 }
     #leftimg{
         width: 100%; 
@@ -123,12 +130,20 @@ box-shadow: 10px;
        border-radius: 50px ;
        margin-top: 15vh;    
     }
+    #Name input{
+        
+        display: flex;
+       flex-wrap: wrap;
+        width: 7.5rem;
+        margin-right: 10px;
+        }
     #text1{
         font-size: medium;
     }
     #text2{
         font-size: smaller;
     }
+
 }
 
  

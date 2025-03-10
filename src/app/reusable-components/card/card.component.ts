@@ -11,13 +11,13 @@ import { Event } from '@angular/router';
   styleUrl: './card.component.css'
 })
 export class CardComponent {
-
+class='';
 
 @Input() products:Product[]=[];
 
 prodcount=0;
 buttonname= 'Add to Cart';
-cardclass='';
+@Input() chosencat:string[]=[];
 
 
 AddToCartFunc(){
@@ -28,16 +28,17 @@ AddToCartFunc(){
     } 
     if(this.prodcount>=5){
       this.buttonname= 'Out of stock';
-      this.cardclass= 'bg-secondary';
+      this.class='bg-secondary'
     }
  }
+ 
  
 @Output() addToCart = new EventEmitter();
 
 // Cardfunc
-ngOnInit(){
+addedtocart(){
 this.addToCart.emit(this.prodcount);
-console.log('ngoninit',this.prodcount);
+console.log('added',this.prodcount);
 }
   // ShoppingCart(products:Product[]){  
   // console.log(products);

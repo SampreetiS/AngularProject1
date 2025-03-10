@@ -3,7 +3,7 @@
     padding: 0px;
 }
 body{
-    background-color: #A7A7A7;
+    background-color: #b7b6b6;
     overflow-x: hidden;
     /* overflow hidden stop horizontal scrolling */
 }
@@ -15,7 +15,7 @@ body{
     justify-content: center;
     align-items: center;
     padding-bottom: 60px;
-    background-color: #A7A7A7;
+    background-color: #b7b6b6;
 
 }
 
@@ -48,7 +48,11 @@ body{
      */
     border: none;
 }
+.herotext{
+    position: absolute;
+    top: 100px;
 
+}
 
 .subcat button{
     /* display: flex;
@@ -85,6 +89,9 @@ body{
     background-color: #5f249f;
     color: white;
 }
+#Hero:hover .herotext{
+    display: none;
+}
 .subcat button:hover{
     
     box-shadow: 5px 5px 18px white;
@@ -114,6 +121,24 @@ body{
 #Shopbtn:hover{
     background-color: #5f249f;
 }
+.catbox{
+    box-shadow: 10px 10px 50px black;
+    margin-bottom: 60px;
+    border-radius: 30px;
+
+}
+.container-fluid{
+    
+}
+footer{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    /* background-color: #4C4C4C; */
+    color: #5f249f;
+    border-radius: 30px;
+    
+}
 
 @media(max-width: 680px){
     body{
@@ -122,6 +147,7 @@ body{
         flex-direction: column;
         align-items: center;
         margin: auto;
+    
     }
     
     .Banner{
@@ -169,6 +195,7 @@ body{
         margin: 30px;
         margin-left: 50px;
         background-color: #5f249f;
+        border: white;
         color: white;
     }
     

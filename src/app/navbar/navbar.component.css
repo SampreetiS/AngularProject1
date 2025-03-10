@@ -6,7 +6,7 @@
 }
 
 body{
-    width: auto;
+    width: 100%;
     background-color: #D0D0D0;
     /* background-image: url("/assets/imgfolder/bruno-kelzer-LvySG1hvuzI-unsplash.jpg");
     background-size: cover; */
@@ -15,17 +15,20 @@ body{
 
 
 .navbar{
-    width: 94%;
+    width: 99%;
     height: 7rem;
     background-color: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 1rem;
-    margin-left: 20px;
+    /* padding-left: 1rem; */
+    /* margin-left: 20px; */
     border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
     position: sticky;
     top: 0px;
+    right: 0px;
+    font-weight: 50;
     color: black;
     /* box-shadow: 1px 2px 15px gray; */
 
@@ -35,12 +38,14 @@ body{
     color: white;
     position: sticky;
     top: 0px;
+    padding-left: 20px;
 }
-.navbar:hover #NavSection li{
+.navbar:hover #NavSection button{
 color: white;
 
 }
 .navbar:hover .SearchBar input{
+width: 8rem;    
 color: white;
 border: 1px solid white;
 }
@@ -51,48 +56,52 @@ border: 1px solid white;
 #Logo{
     width: 10rem;
     height: 2rem;
+    position: absolute;
+    left: 1px;
+    margin-top: 8px;
     background-image: url("/assets/imgfolder/DXC\ Logo.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
 .navbar:hover #Logo{
     /* background-color: white; */
-    width: 10rem;
+    width: 8.5rem;
     height: 2rem;
     background-image: url("/assets/imgfolder/DXC\ Logo\ 2C\ Horiz_White\ RGB.png");
-    background-size: cover;
+    background-size: contain;
     /* background-position: center; */
 
     background-repeat: no-repeat;
 }
 #NavSection{
-    width: 50%;
-    display: flex;
+    width: 30%;
+    display: inline;
     justify-content: space-between;
     align-items: center;
-    /* padding-right: 100px; */
+    padding-left: 100px;
+    /* gap: 20px; */
+
 }
 
 
-#NavSection li{
+#NavSection button{
     list-style: none;
-    display: inline;
-    margin-left: 10px;
+    /* display: inline; */
+    margin-left: 100px;
     color: black;
-    font-size: smaller;
-
+    font-weight: 400;
+    /* font-size: smaller; */
+    border: none;
+    background-color: transparent;
 }
-.SearchBar{
-    width: 45%;
-    display: flex;
-   margin-left: 10px;
 
-}
+
 .SearchBar button{
-    /* width: 12rem;
-    height: 1.2rem; */
+    /* width: 6rem; */
+    height: 1.2rem;
     /* border-radius:  ; */
     border: none;
+    
     margin-left: 10px;
     background-color: transparent;
     /* background-image: url("/assets/imgfolder/magnifying-glass-solid.svg");
@@ -102,44 +111,56 @@ border: 1px solid white;
     /* background-color:gray; */
     /* color:black; */
 }
-.SearchBar button:hover{
-    /* background-color: transparent; */
-    
-    fill: white;
-}
-.SearchBar input{
-    width: 12rem;
+
+#searchinput{
+    /* display: none; */
+    width: 8rem;
     height: 1.4rem;
     background-color: transparent;
-    border: 1.7px solid black;
+    border: 1.7px solid white;
     border-radius: 30px;
     color: white;
     text-align: center;
+    /* padding-right: 100px; */
     /* box-shadow: 1px 1px 9px white inset; */
 }
 .SearchBar input:hover{
     background-color: transparent;
-    /* width: 12rem;
-    height: 1.2rem; */
+    width: 8rem;
+    height: 1.2rem;
     color: #5f249f;
+    /* border: 1.7px solid white; */
+}
+.searchtext{
+    margin-top: 4px;
+   display: flex;
+   flex-wrap: wrap;
+    flex-direction: column-reverse;
+    width: 8rem;
 }
 .SearchBar h6{
     display: none;
    
 }
+#searchbutton:hover .SearchBar input{
+    /* background-color: transparent; */
+    display: flex;
+}
+
 .SearchBar:focus-within h6{
     display: block;
     font-size: x-small;
     color: white;
 }
 
-.Login{
+/* .Login{
     width: 12rem;
     display: flex;
     justify-content: space-between;
        
-}
-.Login button{
+} */
+
+/* .Login button{
     width: 5rem;
     height: 2rem;
     background-color:#5f249f;
@@ -154,49 +175,73 @@ border: 1px solid white;
  background-color: white;
  color: #5f249f;
  box-shadow: 1px 5px 80px rgb(222, 212, 212);
+} */
+.menu{
+    display: block;
 }
-#menucheckbox{
-    display: none;
-}
-#menuicon{
-    display: none;
-    color: white;
-    width: 30px;
-    height: 30px;
-    background-image: url("/assets/imgfolder/menu-icon.svg");
-    background-size: cover;
+
+.icons{
+    position: absolute;
+    right: 15px;
+    gap: 10px;
     
 }
+
 .icons button{
+   
 border: none;
-margin-left: 30px;
+
+
 background-color: transparent;
 
 }
-
-
-
+#hellotext{
+    font-size: smaller;
+    margin-right: 20px;
+    
+}
+#acc{
+  padding-right: 100px;  
+  width: 20rem;
+  height: 20rem;
+  padding-top: 0px;
+}
+.btn {
+   width: fit-content; 
+}
 @media (max-width:1050px){
+    .navbar{
+        width: 100%;
+        
+        font-size: smaller;
+    }
+    .menu{
+        display: flex;
+       }
     
     #NavSection{
         width: fit-content;
     }
-    
+    #hellotext{
+        position: fixed;
+        font-size: smaller;
+    }
 
     
 }
-@media (max-width:768px){
+@media (max-width:698px){
     #logo img{
-        width: 10rem;
+        width: 2rem;
     }
 
     .navbar{
-        width: 6%;
-        height: 20%;
+        width: 100vw;
+        height: 80%;
         /* background-color: transparent; */
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
         /* padding: 1.4rem;
         margin-left: 1%; */
         border-bottom-right-radius: 50px;
@@ -220,7 +265,7 @@ background-color: transparent;
     
     }
     .SearchBar{
-        display: inline;
+        display: none;
        /* width: 8em; */
        margin-left: 10px;
     
@@ -230,8 +275,8 @@ background-color: transparent;
         height: 1.6rem;
         border-radius: 10px ;
         border: none;
-        background-color:#5f249f;
-        color:white;
+        display: none;
+        /* color:white; */
     }
     .SearchBar button:hover{
         background-color: white;
@@ -240,49 +285,38 @@ background-color: transparent;
     .SearchBar input{
         width: 12rem;
         height: 1.4rem;
-        background-color: #5f249f;
+        /* background-color: #5f249f; */
         border: 1.7px solid white;
         border-radius: 30px;
         color: white;
         text-align: center;
+        display: none;
         /* box-shadow: 1px 1px 9px white inset; */
     }
     .SearchBar input:hover{
         background-color: white;
         color: #5f249f;
     }
-    .Login{
-        width: 20%;
-        display: flex;
-        /* justify-content:; */
-        margin-left: 8rem;
+    .SearchBar button:focus input{
+       display: flex;
     }
-    .Login button{
-        width: 80px;
-        height: 50px;
-        /* margin: 10px; */
-        background-color:#5f249f;
-        border-color: white;
-        border: none;
-        border-radius: 30px;
-        color:white;
-        
+   
+    #menucheckbox i{
+        display: block;
+        position: fixed;
+        right: 0px;
     }
-    .Login button:hover{
-     background-color: white;
-     color: #5f249f;
-     box-shadow: 1px 5px 80px rgb(222, 212, 212);
+    .icons{
+        position: absolute;
+        right: 10px;
     }
-    #menucheckbox{
-        display: none;
-    }
-    #menuicon{
-        display: none;
+    /* #menuicon{
+        display: block;
         color: white;
         width: 30px;
         height: 30px;
         background-image: url("/assets/imgfolder/menu-icon.svg");
         background-size: cover;
         
-    }
+    } */
 }

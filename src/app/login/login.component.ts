@@ -51,7 +51,7 @@ loginCheck(RightPass:boolean,RightUser:boolean, name:string){
 
   // if(this.username !=="" && this.password !== ""){
      if (this.RightUser == true && this.RightPass == true){
-       this.router.navigate([''],{queryParams:{name}})
+       this.router.navigate(['home'],{queryParams:{name}})
      }else{
       alert('not successful');
      }

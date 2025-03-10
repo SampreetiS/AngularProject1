@@ -9,9 +9,9 @@ import { ForgotpasspageComponent } from './forgotpasspage/forgotpasspage.compone
 import { CardComponent } from './reusable-components/card/card.component';
 
 export const routes: Routes = [
-    {path:'login', component:LoginComponent},
+    {path:'', component:LoginComponent},
     {path:'signup', component:SignUpComponent},
-    {path:'', component:HomePageComponent},
+    {path:'home', component:HomePageComponent},
     {path:'plp', component:PlpComponent},
     {path:'cart', component:CartPageComponent},
     {path:'navbar', component:NavbarComponent},
