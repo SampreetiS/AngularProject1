@@ -62,8 +62,8 @@
             <div
               id="collapseOne"
               class="accordion-collapse collapse"
-              data-bs-parent="#accordionExample"
-            >
+              data-bs-parent="#accordionExample">
+
               <div class="accordion-body mx-5 px-5 d-flex-column">
                 <label for="cb1">
                   <input
@@ -71,10 +71,10 @@
                     [(ngModel)]="PhoneisChecked"
                     id="cb1"
                     class="mx-2"
-                    (change)="filterf()"
-                  />
-                  <small>Smartphone and Accessories</small></label
-                ><br /><br />
+                    (change)="filterf()"/>
+                  <small>Smartphone and Accessories</small>
+                  </label>
+                  <br /><br />
 
                 <label for="cb2">
                   <input
@@ -82,37 +82,41 @@
                     [(ngModel)]="LaptopisChecked"
                     id="cb2"
                     class="mx-2"
-                    (change)="filterf()"
-                  />
-                  <small>Laptops and Computers</small> </label
-                ><br /><br />
-                <input
+                    (change)="filterf()"/>
+                  <small>Laptops and Computers</small> </label>
+                  <br /><br />
+                
+                <label for="cb3">
+                  <input
                   type="checkbox"
                   [(ngModel)]="GamingisChecked"
                   id="cb3"
                   class="mx-2"
-                  (change)="filterf()"
-                />
-                <label for="cb3"
-                  ><small>Gaming Consoles</small> </label
-                ><br /><br />
-                <input
+                  (change)="filterf()"/>
+                  <small>Gaming Consoles</small> 
+                </label>
+                <br /><br />
+                
+                <label for="cb4">
+                  <input
                   type="checkbox"
                   [(ngModel)]="CameraisChecked"
                   id="cb4"
                   class="mx-2"
-                  (change)="filterf()"
-                />
-                <label for="cb4"><small>Cameras & Photography</small> </label
-                ><br /><br />
-                <input
+                  (change)="filterf()" />
+                  <small>Cameras & Photography</small> 
+                  </label>
+                  <br /><br />
+                
+                <label for="cb4">
+                  <input
                   type="checkbox"
                   [(ngModel)]="WatchisChecked"
                   id="cb4"
                   class="mx-2"
-                  (change)="filterf()"
-                />
-                <label for="cb4"><small>Smartwatches</small> </label>
+                  (change)="filterf()"/>
+                  <small>Smartwatches</small> 
+                </label>
               </div>
             </div>
           </div>
@@ -175,7 +179,7 @@
           <app-card
             [chosencat]="chosencat"
             [products]="chosenprod"
-            (addToCart)="plpfunc($event)"
+            (prodcountEE)="plpfunc($event)"
           ></app-card>
           <!-- } -->
         </div>

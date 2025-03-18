@@ -1,12 +1,12 @@
 import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { CommonModule, NgFor, NgForOf } from '@angular/common';
 import { Product } from '../Product.model';
-import { Event } from '@angular/router';
+import { Event, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [NgForOf, NgFor, CommonModule],
+  imports: [NgForOf, NgFor, CommonModule, RouterLink, RouterOutlet],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
@@ -33,12 +33,19 @@ AddToCartFunc(){
  }
  
  
-@Output() addToCart = new EventEmitter();
+@Output() addToCart = new EventEmitter<any>();
+@Output() prodcountEE = new EventEmitter();
+
 
 // Cardfunc
-addedtocart(){
-this.addToCart.emit(this.prodcount);
-console.log('added',this.prodcount);
+prodcountf(){
+  this.prodcountEE.emit(this.prodcount);
+  console.log('added',this.prodcount);
+}
+addedtocart(product:any){
+this.addToCart.emit(product);
+console.log('sent product', product);
+
 }
   // ShoppingCart(products:Product[]){  
   // console.log(products);

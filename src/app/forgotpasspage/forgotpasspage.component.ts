@@ -22,16 +22,13 @@ export class ForgotpasspageComponent {
   email='';
   constructor(private userservice: UserService) {
     //  let userlist:any;
-  }
-  ngOnInit() {
-    
     this.userservice.getUsers().subscribe((data:any)=>{
       this.userlist=data.users;
      console.log(data.users);
 
     })  
-    
   }
+
   submit(){
   // if(this.email!===''){  
   this.submitted=true;

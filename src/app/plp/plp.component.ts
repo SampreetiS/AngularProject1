@@ -79,6 +79,7 @@ export class PlpComponent {
 
   plpfunc(prodcount: number) {
     this.prodcount = prodcount;
+    console.log("plp", this.prodcount);
   }
   //  ngOnInit(prodcount:number){
   //   console.log('plp', prodcount);
@@ -89,7 +90,7 @@ export class PlpComponent {
     this.chosenprod=this.products;
 
   }
-  constructor(private cdr: ChangeDetectorRef) {}
+  // constructor(private cdr: ChangeDetectorRef) {}
 
   filterf() {
     this.chosencat=[];
@@ -107,7 +108,7 @@ export class PlpComponent {
       this.chosencat.push('Smartwatch');
     }
     console.log(this.chosencat);
-    this.cdr.detectChanges(); // Force Angular to detect changes
+    // this.cdr.detectChanges(); // Force Angular to detect changes
    
     this.chosenprod = this.products.filter(
       (product) => this.chosencat.includes(product.Pname)
@@ -118,16 +119,7 @@ export class PlpComponent {
     
     
    
-    // else{
-    //   this.chosencat='';
-    // }
-    // for(let product of this.products){
-    //   if (product.Pname === this.chosencat){
-    //    this.chosenprod.push(product) ;
-    //   }
-    //   else{
-    //     this.chosenprod=this.products;
-    //   }
+   
 
     
 
@@ -139,10 +131,7 @@ export class PlpComponent {
 
 // @Output() ListingCart= new EventEmitter<any[]>();
 
-//  ngOnInit(products:any[]){
-//   this.ListingCart.emit(this.products);
 
-//  }
 
 // defining an interface for product object array
 

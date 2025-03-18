@@ -31,6 +31,7 @@ export class SignUpComponent {
   };
   // userDetails:any;
   submitted=false;
+  
   SubmitData(val:NgForm) {
     this.submitted=true;
     console.log('Form data', val);

@@ -7,6 +7,7 @@ import { CartPageComponent } from './cart-page/cart-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ForgotpasspageComponent } from './forgotpasspage/forgotpasspage.component';
 import { CardComponent } from './reusable-components/card/card.component';
+import { PdpComponent } from './pdp/pdp.component';
 
 export const routes: Routes = [
     {path:'', component:LoginComponent},
@@ -17,6 +18,9 @@ export const routes: Routes = [
     {path:'navbar', component:NavbarComponent},
     {path:'forgotpass', loadComponent:()=> import('./forgotpasspage/forgotpasspage.component').then((c)=>c.ForgotpasspageComponent) },
     {path:'card', component:CardComponent},
+    {path:'pdp', component:PdpComponent},
+
+
 
 
 
